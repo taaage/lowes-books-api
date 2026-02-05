@@ -1,0 +1,18 @@
+@rootUrl = http://localhost:5118w
+
+GET {{rootUrl}}/api/books/
+Accept: application/json
+
+###
+
+POST {{rootUrl}}/api/books
+Content-Type: application/json
+
+###
+
+PUT {{rootUrl}}/api/books/
+Content-Type: application/json
+
+###
+DELETE {{rootUrl}}/api/books/
+Accept: application/json
