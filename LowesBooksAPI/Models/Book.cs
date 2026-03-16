@@ -1,4 +1,4 @@
-﻿namespace FirstAPI.Models
+﻿namespace LowesBooksAPI.Models
 {
     public class Book
     {

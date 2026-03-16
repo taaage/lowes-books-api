@@ -1,8 +1,8 @@
-﻿using FirstAPI.Models;
+﻿using LowesBooksAPI.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace FirstAPI.Controllers
+namespace LowesBooksAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
