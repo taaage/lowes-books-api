@@ -45,6 +45,15 @@ dotnet run --project LowesBooksAPI
 
 Runs on `http://localhost:5118`. Swagger UI available at `http://localhost:5118/swagger`.
 
+### Swagger
+
+The API includes Swagger/OpenAPI documentation for interactive testing:
+
+- Swagger UI: `http://localhost:5118/swagger`
+- OpenAPI JSON: `http://localhost:5118/swagger/v1/swagger.json`
+
+Swagger is enabled in development mode only.
+
 ### Frontend
 
 ```bash
