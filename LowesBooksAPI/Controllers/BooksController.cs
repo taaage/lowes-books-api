@@ -36,6 +36,42 @@ namespace LowesBooksAPI.Controllers
                 YearPublished = "1930",
                 Rating = 5.0,
                 BookImage = "https://covers.openlibrary.org/b/id/7222161-L.jpg"
+            },
+            new Book
+            {
+                Id = 4,
+                Title = "Pride and Prejudice",
+                Author = "Jane Austen",
+                YearPublished = "1813",
+                Rating = 4.2,
+                BookImage = "https://covers.openlibrary.org/b/id/12645114-L.jpg"
+            },
+            new Book
+            {
+                Id = 5,
+                Title = "The Great Gatsby",
+                Author = "F. Scott Fitzgerald",
+                YearPublished = "1925",
+                Rating = 3.8,
+                BookImage = "https://covers.openlibrary.org/b/id/14350216-L.jpg"
+            },
+            new Book
+            {
+                Id = 6,
+                Title = "Brave New World",
+                Author = "Aldous Huxley",
+                YearPublished = "1932",
+                Rating = 4.5,
+                BookImage = "https://covers.openlibrary.org/b/id/14350347-L.jpg"
+            },
+            new Book
+            {
+                Id = 7,
+                Title = "The Hobbit",
+                Author = "J.R.R. Tolkien",
+                YearPublished = "1937",
+                Rating = 4.7,
+                BookImage = "https://covers.openlibrary.org/b/id/14627222-L.jpg"
             }
         };
 
