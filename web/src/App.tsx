@@ -8,7 +8,7 @@ import type { Book } from "./types/Book";
 export default function App() {
   const [books, setBooks] = useState<Book[]>([]);
   const [commentCounts, setCommentCounts] = useState<Record<number, number>>({});
-  const [sortAsc, setSortAsc] = useState(true);
+  const [sortAsc, setSortAsc] = useState(false);
   const [editing, setEditing] = useState<Book | null>(null);
   const [adding, setAdding] = useState(false);
 
@@ -48,6 +48,9 @@ export default function App() {
 
   return (
     <>
+      <div className="profile">
+        <img src="/lowe.jpg" alt="Lowe" className="avatar" />
+      </div>
       <h1>Lowes Book Library</h1>
       <div className="controls">
         <button onClick={() => setSortAsc(!sortAsc)}>

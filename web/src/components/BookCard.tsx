@@ -24,7 +24,7 @@ export function BookCard({ book, commentCount, onEdit, onDelete, onCommentChange
 
   return (
     <div className="book">
-      <div className="book-row">
+      <div className="book-row" onClick={() => setShowComments(!showComments)} style={{ cursor: 'pointer' }}>
         <div className="rating" style={{ color: ratingColor(book.rating) }}>{book.rating}</div>
         <div className="cover" style={{ '--spine-color': color } as React.CSSProperties}>
           <div className="spine">{initial}</div>
@@ -33,7 +33,7 @@ export function BookCard({ book, commentCount, onEdit, onDelete, onCommentChange
           <h3>{book.title}</h3>
           <p>{book.author} ({book.yearPublished})</p>
         </div>
-        <div className="actions">
+        <div className="actions" onClick={e => e.stopPropagation()}>
           <button className="comment-btn" onClick={() => setShowComments(!showComments)}>
             <CommentIcon />
             {commentCount > 0 && <span>{commentCount}</span>}
