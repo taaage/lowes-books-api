@@ -66,10 +66,21 @@ Runs on `http://localhost:5173`.
 
 ## API Endpoints
 
-| Method | Endpoint                        | Description     |
-|--------|---------------------------------|-----------------|
-| GET    | `/api/Books/getBooks`           | List all books  |
-| GET    | `/api/Books/getBookById/{id}`   | Get book by ID  |
-| POST   | `/api/Books/addBook`            | Add a book      |
-| PUT    | `/api/Books/updateBook/{id}`    | Update a book   |
-| DELETE | `/api/Books/deleteBook/{id}`    | Delete a book   |
+### Books
+
+| Method | Endpoint             | Description     |
+|--------|----------------------|-----------------|
+| GET    | `/api/books`         | List all books  |
+| GET    | `/api/books/{id}`    | Get book by ID  |
+| POST   | `/api/books`         | Add a book      |
+| PUT    | `/api/books/{id}`    | Update a book   |
+| DELETE | `/api/books/{id}`    | Delete a book   |
+
+### Comments
+
+| Method | Endpoint                         | Description                |
+|--------|----------------------------------|----------------------------|
+| GET    | `/api/books/{bookId}/comments`   | Get comments for a book    |
+| GET    | `/api/comments/counts`           | Get comment counts by book |
+| POST   | `/api/comments`                  | Add a comment              |
+| DELETE | `/api/comments/{id}`             | Delete a comment           |

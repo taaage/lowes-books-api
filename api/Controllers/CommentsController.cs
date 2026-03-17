@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace LowesBooksAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/comments")]
     [ApiController]
     public class CommentsController : ControllerBase
     {
@@ -17,7 +17,7 @@ namespace LowesBooksAPI.Controllers
         };
         static private int nextId = 6;
 
-        [HttpGet("getByBookId/{bookId}")]
+        [HttpGet("/api/books/{bookId}/comments")]
         public ActionResult<List<Comment>> GetByBookId(int bookId)
         {
             return Ok(comments.Where(c => c.BookId == bookId).OrderByDescending(c => c.CreatedAt).ToList());
@@ -29,7 +29,7 @@ namespace LowesBooksAPI.Controllers
             return Ok(comments.GroupBy(c => c.BookId).ToDictionary(g => g.Key, g => g.Count()));
         }
 
-        [HttpPost("add")]
+        [HttpPost]
         public ActionResult<Comment> Add(Comment comment)
         {
             comment.Id = nextId++;
@@ -38,7 +38,7 @@ namespace LowesBooksAPI.Controllers
             return Created("", comment);
         }
 
-        [HttpDelete("delete/{id}")]
+        [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
             var comment = comments.Find(c => c.Id == id);

@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace LowesBooksAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/books")]
     [ApiController]
     public class BooksController : ControllerBase
     {
@@ -19,13 +19,13 @@ namespace LowesBooksAPI.Controllers
             new Book { Id = 7, Title = "The Giving Tree", Author = "Shel Silverstein", YearPublished = "1964", Rating = 3.8 }
         };
 
-        [HttpGet("getBooks")]
+        [HttpGet]
         public ActionResult<List<Book>> GetBooks()
         {
             return Ok(books.OrderByDescending(b => b.Rating).ToList());
         }
 
-        [HttpGet("getBookById/{id}")]
+        [HttpGet("{id}")]
         public ActionResult<Book> GetBookById(int id)
         {
 
@@ -38,7 +38,7 @@ namespace LowesBooksAPI.Controllers
             return Ok(book);
         }
 
-        [HttpPost("addBook")]
+        [HttpPost]
         public ActionResult<Book> AddBook(Book newBook)
         {
             if (newBook == null)
@@ -51,7 +51,7 @@ namespace LowesBooksAPI.Controllers
 
         }
 
-        [HttpPut("updateBook/{id}")]
+        [HttpPut("{id}")]
         public IActionResult UpdateBook(int id, Book updatedBook)
         {
             var book = books.Find(x => x.Id == id);
@@ -70,7 +70,7 @@ namespace LowesBooksAPI.Controllers
 
         }
 
-        [HttpDelete("deleteBook/{id}")]
+        [HttpDelete("{id}")]
         public IActionResult DeleteBook(int id)
         {
             var book = books.Find(x => x.Id == id);

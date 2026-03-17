@@ -1,14 +1,14 @@
 import type { Comment } from '../types/Comment'
 
-const API = 'http://localhost:5118/api/Comments'
+const BASE = 'http://localhost:5118/api'
 
 export const commentsApi = {
-  getByBookId: (bookId: number): Promise<Comment[]> => fetch(`${API}/getByBookId/${bookId}`).then(r => r.json()),
+  getByBookId: (bookId: number): Promise<Comment[]> => fetch(`${BASE}/books/${bookId}/comments`).then(r => r.json()),
 
-  getCounts: (): Promise<Record<number, number>> => fetch(`${API}/counts`).then(r => r.json()),
+  getCounts: (): Promise<Record<number, number>> => fetch(`${BASE}/comments/counts`).then(r => r.json()),
 
   add: (comment: Omit<Comment, 'id' | 'createdAt'>): Promise<Comment> =>
-    fetch(`${API}/add`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(comment) }).then(r => r.json()),
+    fetch(`${BASE}/comments`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(comment) }).then(r => r.json()),
 
-  delete: (id: number): Promise<Response> => fetch(`${API}/delete/${id}`, { method: 'DELETE' }),
+  delete: (id: number): Promise<Response> => fetch(`${BASE}/comments/${id}`, { method: 'DELETE' }),
 }
