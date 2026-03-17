@@ -7,7 +7,6 @@
         public string Author { get; set; } = null!;
         public string YearPublished { get; set; } = null!;
         public double Rating { get; set; }
-        public string BookImage { get; set; } = null!;
          
     }
 }
