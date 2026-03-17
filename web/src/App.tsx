@@ -43,7 +43,7 @@ export default function App() {
 
   return (
     <>
-      <h1>Lowes Books</h1>
+      <h1>Lowes Book Library</h1>
       <div className="controls">
         <button onClick={() => setSortAsc(!sortAsc)}>
           Sort by Rating ({sortAsc ? "↑" : "↓"})
