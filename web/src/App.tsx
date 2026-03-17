@@ -48,10 +48,10 @@ export default function App() {
 
   return (
     <>
-      <div className="profile">
+      <div className="header">
         <img src="/lowe.jpg" alt="Lowe" className="avatar" />
+        <h1>Lowes Book Library</h1>
       </div>
-      <h1>Lowes Book Library</h1>
       <div className="controls">
         <button onClick={() => setSortAsc(!sortAsc)}>
           Sort by Rating ({sortAsc ? "↑" : "↓"})

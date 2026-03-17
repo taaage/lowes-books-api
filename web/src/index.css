@@ -19,13 +19,16 @@ body {
   color: #e6edf3;
   min-height: 100vh;
 }
-.profile {
-  text-align: center;
-  margin-bottom: 12px;
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 24px;
 }
 .avatar {
-  width: 96px;
-  height: 96px;
+  width: 128px;
+  height: 128px;
   border-radius: 50%;
   border: 3px solid #30363d;
   object-fit: cover;
@@ -34,8 +37,6 @@ body {
 h1 {
   font-size: 2rem;
   font-weight: 600;
-  text-align: center;
-  margin-bottom: 24px;
   color: #e6edf3;
 }
 .controls {
