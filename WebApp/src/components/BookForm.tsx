@@ -17,7 +17,6 @@ export function BookForm({ book, onSave, onCancel }: Props) {
       <input placeholder="Author" value={form.author} onChange={e => set('author', e.target.value)} />
       <input placeholder="Year" value={form.yearPublished} onChange={e => set('yearPublished', e.target.value)} />
       <input placeholder="Rating" type="number" step="0.1" value={form.rating} onChange={e => set('rating', +e.target.value)} />
-      <input placeholder="Image URL" value={form.bookImage} onChange={e => set('bookImage', e.target.value)} />
       <div className="buttons">
         <button onClick={() => onSave(form)}>Save</button>
         <button onClick={onCancel}>Cancel</button>

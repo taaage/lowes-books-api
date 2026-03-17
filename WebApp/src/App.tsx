@@ -39,7 +39,6 @@ export default function App() {
     author: "",
     yearPublished: "",
     rating: 0,
-    bookImage: "",
   };
 
   return (
