@@ -31,7 +31,7 @@ namespace LowesBooksAPI.Controllers
 
             var book = books.Find(x => x.Id == id);
 
-            if (books == null)
+            if (book == null)
             {
                 return NotFound();
             }
