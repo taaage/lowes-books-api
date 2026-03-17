@@ -7,7 +7,7 @@ A full-stack book management app with a .NET API backend and a React TypeScript 
 ```
 lowes-books-api/
 ├── LowesBooksAPI.slnx              # .NET solution file
-├── LowesBooksAPI/                   # Backend - ASP.NET Core Web API
+├── api/                             # Backend - ASP.NET Core Web API
 │   ├── Controllers/
 │   │   └── BooksController.cs       # CRUD endpoints for books
 │   ├── Models/
@@ -17,7 +17,7 @@ lowes-books-api/
 │   ├── LowesBooksAPI.http           # HTTP request samples
 │   ├── appsettings.json
 │   └── appsettings.Development.json
-└── WebApp/                          # Frontend - React + TypeScript + Vite
+└── web/                             # Frontend - React + TypeScript + Vite
     ├── src/
     │   ├── api/
     │   │   └── booksApi.ts          # API client for all book endpoints
@@ -40,7 +40,7 @@ lowes-books-api/
 ### Backend
 
 ```bash
-dotnet run --project LowesBooksAPI
+dotnet run --project api
 ```
 
 Runs on `http://localhost:5118`. Swagger UI available at `http://localhost:5118/swagger`.
@@ -57,7 +57,7 @@ Swagger is enabled in development mode only.
 ### Frontend
 
 ```bash
-cd WebApp
+cd web
 npm install
 npm run dev
 ```
