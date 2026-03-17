@@ -148,6 +148,12 @@ button:hover {
   border-color: #58a6ff;
   box-shadow: 0 0 0 3px #58a6ff33;
 }
+.form .error {
+  display: block;
+  color: #f85149;
+  font-size: 0.75rem;
+  margin: -6px 0 8px;
+}
 .form .buttons {
   display: flex;
   gap: 10px;

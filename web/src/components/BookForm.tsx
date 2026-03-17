@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useForm } from 'react-hook-form'
 import type { Book } from '../types/Book'
 
 interface Props {
@@ -8,19 +8,22 @@ interface Props {
 }
 
 export function BookForm({ book, onSave, onCancel }: Props) {
-  const [form, setForm] = useState(book)
-  const set = (k: keyof Book, v: string | number) => setForm({ ...form, [k]: v })
+  const { register, handleSubmit, formState: { errors } } = useForm<Book>({ defaultValues: book })
 
   return (
-    <div className="form">
-      <input placeholder="Title" value={form.title} onChange={e => set('title', e.target.value)} />
-      <input placeholder="Author" value={form.author} onChange={e => set('author', e.target.value)} />
-      <input placeholder="Year" value={form.yearPublished} onChange={e => set('yearPublished', e.target.value)} />
-      <input placeholder="Rating" type="number" step="0.1" value={form.rating} onChange={e => set('rating', +e.target.value)} />
+    <form className="form" onSubmit={handleSubmit(onSave)}>
+      <input placeholder="Title" {...register('title', { required: 'Title is required', maxLength: { value: 200, message: 'Max 200 characters' } })} />
+      {errors.title && <span className="error">{errors.title.message}</span>}
+      <input placeholder="Author" {...register('author', { required: 'Author is required', maxLength: { value: 200, message: 'Max 200 characters' } })} />
+      {errors.author && <span className="error">{errors.author.message}</span>}
+      <input placeholder="Year (e.g. 1984)" {...register('yearPublished', { required: 'Year is required', pattern: { value: /^\d{4}$/, message: 'Must be 4 digits' } })} />
+      {errors.yearPublished && <span className="error">{errors.yearPublished.message}</span>}
+      <input placeholder="Rating (1–5)" type="number" step="0.1" {...register('rating', { valueAsNumber: true, min: { value: 1, message: 'Min rating is 1' }, max: { value: 5, message: 'Max rating is 5' } })} />
+      {errors.rating && <span className="error">{errors.rating.message}</span>}
       <div className="buttons">
-        <button onClick={() => onSave(form)}>Save</button>
-        <button onClick={onCancel}>Cancel</button>
+        <button type="submit">Save</button>
+        <button type="button" onClick={onCancel}>Cancel</button>
       </div>
-    </div>
+    </form>
   )
 }
